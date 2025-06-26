@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3-3 研究所 × 脱出ゲーム</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Titillium Web', sans-serif;
+      background: linear-gradient(to right, #c1eaff, #e3f6ff);
+      overflow-x: hidden;
+    }
+    header {
+      background: linear-gradient(135deg, #204969, #318fb5);
+      color: white;
+      padding: 60px 30px;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3em;
+      margin: 0;
+      animation: pulse 3s infinite;
+    }
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+      animation: fadeIn 2s ease-out;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    section img {
+      max-width: 300px;
+      margin: 20px auto;
+      display: block;
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+    .highlight {
+      color: #204969;
+      font-weight: bold;
+      font-size: 1.3em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>3-3 研究所 × 脱出ゲーム</h1>
+    <p>白衣に身を包んだ研究員たちが、あなたを研究所へとご案内します。</p>
+  </header>
+  <section>
+    <h2>🎪 文化祭スペシャルイベント！</h2>
+    <p>突如暴走した研究設備、封鎖された研究所──<br>
+    あなたは全ての謎を解き明かし、脱出することができるか？</p>
+    <img src="https://cdn.pixabay.com/photo/2017/01/31/17/44/laboratory-2027510_1280.png" alt="研究所イラスト">
+  </section>
+  <section>
+    <h2>🔍 こんな人にオススメ！</h2>
+    <p>
+      <span class="highlight">✔ 謎解きが好き</span> / <span class="highlight">✔ 理系っぽさが好き</span><br>
+      <span class="highlight">✔ おしゃれサイトに惹かれたあなた</span>
+    </p>
+  </section>
+</body>
+</html>
