@@ -2,86 +2,128 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>3-3リアル脱出ゲーム</title>
+  <title>研究所×脱出ゲーム</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Noto+Sans+JP&display=swap" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; margin:0; padding:0; }
     body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #f0f8ff;
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: #e3f2fd;
       background-image:
         linear-gradient(0deg, transparent 31%, rgba(255,255,255,0.6) 32%, rgba(255,255,255,0.6) 33%, transparent 34%, transparent 67%, rgba(255,255,255,0.6) 68%, rgba(255,255,255,0.6) 69%, transparent 70%),
         linear-gradient(90deg, transparent 31%, rgba(255,255,255,0.6) 32%, rgba(255,255,255,0.6) 33%, transparent 34%, transparent 67%, rgba(255,255,255,0.6) 68%, rgba(255,255,255,0.6) 69%, transparent 70%);
       background-size: 24.5px 24.5px;
-    }
-
-    .title {
-      font-size: 3.5em;
-      font-weight: bold;
-      color: #a0dfff;
+      color: #0d47a1;
       text-align: center;
-      margin-top: 60px;
-      position: relative;
-      display: inline-block;
-      padding: 10px 20px;
-      border-radius: 25px;
-      background: white;
+    }
+    header {
+      padding: 50px 20px;
+      background: linear-gradient(to right, #1a237e, #3949ab);
+    }
+    .title {
+      display:inline-block;
+      font-family:'Orbitron', sans-serif;
+      font-size:3.2em;
+      color:#4fc3f7;
+      padding:10px 20px;
+      border-radius:20px;
+      position:relative;
       box-shadow:
         0 0 0 8px white,
-        0 0 0 16px #a0dfff;
+        0 0 0 16px #4fc3f7;
     }
-
-    .title::before {
-      content: "";
-      position: absolute;
-      top: -16px;
-      left: -16px;
-      right: -16px;
-      bottom: -16px;
-      border-radius: 30px;
-      background: white;
-      z-index: -2;
+    .location-wrapper {
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:12px;
+      margin-top:20px;
     }
-
-    .container {
-      display: flex;
-      align-items: center;
-      padding: 40px;
-      font-size: 1.6em;
+    .location-text {
+      font-size:1.6em;
+      color:#bbdefb;
     }
-
-    .map-text {
-      font-weight: bold;
-      font-size: 1.6em;
-      margin-right: 20px;
-      flex-shrink: 0;
+    .location-img {
+      height:136px;
+      width:auto;
     }
-
-    .map-image {
-      height: 136px; /* 約1.7倍 */
-      width: auto;
-    }
-
     .flask {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      width: 60px; /* 小さめ（0.4倍くらい） */
-      height: auto;
+      position:fixed;
+      bottom:20px; left:20px;
+      width:60px; height:auto;
+    }
+    section {
+      background:#fff;
+      border-left:6px solid #42a5f5;
+      border-radius:12px;
+      padding:20px 24px;
+      margin:30px auto;
+      max-width:900px;
+      text-align:left;
+    }
+    section h2 {
+      font-family:'Orbitron', sans-serif;
+      font-size:1.5em;
+      color:#1565c0;
+      margin-bottom:10px;
+    }
+    section p, a {
+      font-size:1em;
+      color:#1a237e;
+    }
+    a:hover { text-decoration:underline; }
+    footer {
+      font-size:0.9em;
+      padding:40px 0;
+      color:#546e7a;
     }
   </style>
 </head>
 <body>
 
-  <div style="text-align: center;">
-    <div class="title">研究所 × 脱出ゲーム</div>
-  </div>
-
-  <div class="container">
-    <div class="map-text">📍場所：2階 3年3組教室</div>
-    <img class="map-image" src="https://tyoudoii-illust.com/wp-content/uploads/2021/02/aisome_school_mono.png" alt="学校イラスト">
-  </div>
+  <header>
+    <div class="title">研究所<br>×<br>脱出ゲーム</div>
+    <div class="location-wrapper">
+      <div class="location-text">📍場所：2階 3年3組教室</div>
+      <img class="location-img" src="https://tyoudoii-illust.com/wp-content/uploads/2021/02/aisome_school_mono.png" alt="学校イラスト">
+    </div>
+  </header>
 
   <img class="flask" src="https://science-illust.com/wp-content/uploads/2022/10/tt_green.png" alt="緑のフラスコ">
+
+  <section>
+    <h2>出し物紹介</h2>
+    <p>研究員に扮した3‑3の生徒たちが白衣でお出迎え！お客さんは謎解きに挑戦し、研究所からの脱出を目指します！</p>
+  </section>
+
+  <section>
+    <h2>ストーリー</h2>
+    <p>あなたは研究者に憧れる高校生。見学に訪れたフジワラボで非常アラームが鳴り響き、一室に閉じ込められてしまった！与えられたヒントを頼りに、15分以内に脱出できるか！？</p>
+  </section>
+
+  <section>
+    <h2>待ち時間</h2>
+    <p>リアルタイムでの待ち時間表示を予定しています！</p>
+  </section>
+
+  <section>
+    <h2>お試し謎</h2>
+    <p>ここでしか解けないミニ謎解きを後日公開予定！</p>
+  </section>
+
+  <section>
+    <h2>準備の様子</h2>
+    <p>脱出研究所の裏側をチラ見せ！当日までの準備風景もアップしていきます。</p>
+  </section>
+
+  <section>
+    <h2>Instagram</h2>
+    <p><a href="#">公式インスタグラム（後日公開）</a></p>
+  </section>
+
+  <footer>
+    © 2025 フジワラボ脱出企画 All rights reserved.
+  </footer>
 
 </body>
 </html>
