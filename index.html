@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>研究所 × 脱出ゲーム</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <title>研究所×脱出ゲーム</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@600&family=Zen+Dots&family=Noto+Sans+JP&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -12,11 +12,12 @@
     body {
       margin: 0;
       font-family: 'Noto Sans JP', sans-serif;
-      background-color: #cce8ff;
-      background-image:
-        linear-gradient(to right, rgba(255, 255, 255, 0.6) 3px, transparent 3px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 3px, transparent 3px);
+      background-color: #e3f2fd;
+      background-image: 
+        linear-gradient(to right, white 2px, transparent 2px),
+        linear-gradient(to bottom, white 2px, transparent 2px);
       background-size: 60px 60px;
+      background-position: top left;
       color: #0d47a1;
       display: flex;
       flex-direction: column;
@@ -26,35 +27,44 @@
       background: linear-gradient(to right, #1a237e, #3949ab);
       color: #fff;
       width: 100%;
-      padding: 50px 20px;
+      padding: 50px 20px 30px;
       text-align: center;
       position: relative;
       overflow: hidden;
       animation: headerEnter 1.5s ease-in-out forwards;
     }
-    header h1 {
+    .title-with-outline span {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 3.5em;
-      line-height: 1.2;
-      margin: 0;
-      color: #a7e1ff;
-      text-shadow: 
-        -1px -1px 0 #ffffff,
-         1px -1px 0 #ffffff,
-        -1px  1px 0 #ffffff,
-         1px  1px 0 #ffffff;
-    }
-    header h1 span {
+      color: #81d4fa;
+      text-shadow:
+        -5px 0 white,
+        5px 0 white,
+        0 -5px white,
+        0 5px white,
+        -3px -3px white,
+        -3px 3px white,
+        3px -3px white,
+        3px 3px white;
       display: block;
+      line-height: 1.1;
     }
-    header p {
-      font-size: 1.1em;
-      margin-top: 10px;
+    .location-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 700px;
+      width: 90%;
+      margin: 10px auto 0;
     }
     .location {
-      font-size: 0.95em;
-      margin-top: 8px;
+      font-size: 1em;
       color: #bbdefb;
+      margin: 0;
+    }
+    .photo-one {
+      width: 50px;
+      height: auto;
     }
     section {
       background: #ffffff;
@@ -69,7 +79,7 @@
       animation: fadeUp 0.9s ease-out;
     }
     section h2 {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Orbitron', sans-serif;
       font-size: 1.5em;
       color: #1565c0;
       margin-bottom: 10px;
@@ -82,27 +92,16 @@
     a:hover {
       text-decoration: underline;
     }
+    .photo-two {
+      width: 80px;
+      margin-top: 10px;
+    }
     footer {
       margin-top: 40px;
       font-size: 0.9em;
       color: #546e7a;
       text-align: center;
       padding-bottom: 40px;
-    }
-    .lab-img {
-      width: 100px;
-      position: absolute;
-      top: -30px;
-      right: 20px;
-      animation: float 3s ease-in-out infinite;
-    }
-    .gimmick-beaker {
-      width: 60px;
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      animation: wiggle 2s infinite;
-      z-index: 10;
     }
     .lab-banner {
       width: 100px;
@@ -113,58 +112,45 @@
       animation: zoomIn 1.4s ease-out;
     }
 
+    /* アニメーション */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
     @keyframes zoomIn {
       0% { transform: scale(0.9); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-    @keyframes titlePop {
-      0% { transform: scale(0.6); opacity: 0; }
       100% { transform: scale(1); opacity: 1; }
     }
     @keyframes headerEnter {
       0% { opacity: 0; transform: translateY(-50px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-    @keyframes wiggle {
-      0% { transform: rotate(0deg); }
-      25% { transform: rotate(3deg); }
-      50% { transform: rotate(-3deg); }
-      75% { transform: rotate(2deg); }
-      100% { transform: rotate(0deg); }
-    }
   </style>
 </head>
 <body>
   <header>
-    <h1>
+    <h1 class="title-with-outline">
       <span>研究所</span>
       <span>×</span>
       <span>脱出ゲーム</span>
     </h1>
-    <p>文化祭で挑戦！3-3の研究所から脱出せよ！</p>
-    <p class="location">📍場所: 2階 3年3組教室</p>
+    <div class="location-wrapper">
+      <p class="location">📍場所：2階 3年3組教室</p>
+      <img class="photo-one" src="https://cdn-icons-png.flaticon.com/512/3004/3004577.png" alt="number one" />
+    </div>
   </header>
 
-  <img class="lab-banner" src="https://tyoudoii-illust.com/wp-content/uploads/2021/02/aisome_school_mono.png" alt="number one"/>
-  <img class="gimmick-beaker" src="https://cdn-icons-png.flaticon.com/512/2933/2933924.png" alt="number two" />
+  <img class="lab-banner" src="https://tyoudoii-illust.com/wp-content/uploads/2021/02/aisome_school_mono.png" alt="lab-banner" />
 
   <section>
-    <img class="lab-img" src="https://cdn-icons-png.flaticon.com/512/3004/3004577.png" alt="number three" />
     <h2>出し物紹介</h2>
     <p>研究員に扮した3-3の生徒たちが白衣でお出迎え！お客さんは謎解きに挑戦し、研究所からの脱出を目指します！</p>
+    <img class="photo-two" src="https://science-illust.com/wp-content/uploads/2022/10/emflask_red.png" alt="number two" />
   </section>
 
   <section>
     <h2>ストーリー</h2>
-    <p>極秘実験中に突如鳴り響くアラーム音――！閉じ込められた研究所に残された手がかりをたよりに、無事脱出できるか！？</p>
+    <p>あなたは研究者に憧れる高校生。見学に訪れた研究所「フジワラボ」で突如非常アラームが鳴り響き、研究室に閉じ込められてしまった！残された手がかりを頼りに、15分以内にこの部屋から脱出できるか――！？</p>
   </section>
 
   <section>
