@@ -4,25 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>研究所 × 脱出ゲーム</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Zen+Dots&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
     }
-
     body {
       margin: 0;
       font-family: 'Noto Sans JP', sans-serif;
-      background-color: #e3f2fd;
-      background-image: linear-gradient(to right, rgba(255,255,255,0.3) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgba(255,255,255,0.3) 1px, transparent 1px);
-      background-size: 30px 30px;
+      background-color: #cce8ff;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.6) 3px, transparent 3px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 3px, transparent 3px);
+      background-size: 60px 60px;
       color: #0d47a1;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-
     header {
       background: linear-gradient(to right, #1a237e, #3949ab);
       color: #fff;
@@ -33,36 +32,30 @@
       overflow: hidden;
       animation: headerEnter 1.5s ease-in-out forwards;
     }
-
     header h1 {
-      background: linear-gradient(to right, #00d4ff, #ffffff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-family: 'Orbitron', sans-serif;
-      font-size: 3em;
-      margin: 0;
-      animation: titlePop 2s ease-out;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.5em;
       line-height: 1.2;
+      margin: 0;
+      color: #a7e1ff;
+      text-shadow: 
+        -1px -1px 0 #ffffff,
+         1px -1px 0 #ffffff,
+        -1px  1px 0 #ffffff,
+         1px  1px 0 #ffffff;
     }
-
     header h1 span {
       display: block;
     }
-
     header p {
       font-size: 1.1em;
       margin-top: 10px;
     }
-
     .location {
       font-size: 0.95em;
       margin-top: 8px;
       color: #bbdefb;
     }
-
     section {
       background: #ffffff;
       border-left: 6px solid #42a5f5;
@@ -75,24 +68,20 @@
       position: relative;
       animation: fadeUp 0.9s ease-out;
     }
-
     section h2 {
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Bebas Neue', sans-serif;
       font-size: 1.5em;
       color: #1565c0;
       margin-bottom: 10px;
     }
-
     section p, a {
       font-size: 1em;
       color: #1a237e;
       text-decoration: none;
     }
-
     a:hover {
       text-decoration: underline;
     }
-
     footer {
       margin-top: 40px;
       font-size: 0.9em;
@@ -100,16 +89,14 @@
       text-align: center;
       padding-bottom: 40px;
     }
-
-    .img-flask {
+    .lab-img {
       width: 100px;
       position: absolute;
       top: -30px;
       right: 20px;
       animation: float 3s ease-in-out infinite;
     }
-
-    .img-beaker {
+    .gimmick-beaker {
       width: 60px;
       position: fixed;
       bottom: 20px;
@@ -117,8 +104,7 @@
       animation: wiggle 2s infinite;
       z-index: 10;
     }
-
-    .img-banner {
+    .lab-banner {
       width: 100px;
       max-width: 1100px;
       height: auto;
@@ -131,27 +117,22 @@
       from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
-
     @keyframes zoomIn {
       0% { transform: scale(0.9); opacity: 0; }
       100% { transform: scale(1); opacity: 1; }
     }
-
     @keyframes titlePop {
       0% { transform: scale(0.6); opacity: 0; }
       100% { transform: scale(1); opacity: 1; }
     }
-
     @keyframes headerEnter {
       0% { opacity: 0; transform: translateY(-50px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-
     @keyframes wiggle {
       0% { transform: rotate(0deg); }
       25% { transform: rotate(3deg); }
@@ -168,15 +149,15 @@
       <span>×</span>
       <span>脱出ゲーム</span>
     </h1>
-    <p>文化祭で挑戦！研究所から脱出せよ！</p>
-    <p class="location">📍場所：3年3組 教室</p>
+    <p>文化祭で挑戦！3-3の研究所から脱出せよ！</p>
+    <p class="location">📍場所: 2階 3年3組教室</p>
   </header>
 
-  <img class="img-banner" src="https://tyoudoii-illust.com/wp-content/uploads/2021/02/aisome_school_mono.png" alt="img-banner"/>
-  <img class="img-beaker" src="https://cdn-icons-png.flaticon.com/512/2933/2933924.png" alt="img-beaker" />
+  <img class="lab-banner" src="https://tyoudoii-illust.com/wp-content/uploads/2021/02/aisome_school_mono.png" alt="number one"/>
+  <img class="gimmick-beaker" src="https://cdn-icons-png.flaticon.com/512/2933/2933924.png" alt="number two" />
 
   <section>
-    <img class="img-flask" src="https://cdn-icons-png.flaticon.com/512/3004/3004577.png" alt="img-flask" />
+    <img class="lab-img" src="https://cdn-icons-png.flaticon.com/512/3004/3004577.png" alt="number three" />
     <h2>出し物紹介</h2>
     <p>研究員に扮した3-3の生徒たちが白衣でお出迎え！お客さんは謎解きに挑戦し、研究所からの脱出を目指します！</p>
   </section>
