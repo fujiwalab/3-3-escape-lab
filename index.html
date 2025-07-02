@@ -14,7 +14,11 @@
 
     body {
       font-family: 'Noto Sans JP', sans-serif;
-      background-color: #ffffff;
+      background-color: #aaa;
+      background-image: 
+        linear-gradient(to right, rgba(255,255,255,0.2) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.2) 1px, transparent 1px);
+      background-size: 20px 20px;
       color: #0d1b2a;
       line-height: 1.6;
     }
@@ -30,7 +34,6 @@
     .title-image {
       width: 80%;
       max-width: 600px;
-
       height: auto;
       margin: 0 auto 20px;
     }
@@ -53,8 +56,8 @@
       position: absolute;
       top: 800px;
       left: 150px;
-      weidh: 100%
-      max-width:400px;
+      weidh: 100%;
+      max-width: 400px;
       opacity: 0.2;
       z-index: 0;
     }
@@ -70,11 +73,10 @@
 
     main {
       padding: 60px 20px;
-      background: #f9f9f9;
     }
 
     section {
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.8);
       border: 1px solid #ccc;
       border-left: 6px solid #f9a825;
       border-radius: 12px;
