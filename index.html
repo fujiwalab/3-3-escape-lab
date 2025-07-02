@@ -38,21 +38,22 @@
       flex-wrap: wrap;
     }
     .location {
-      font-size: 1.3em;
+      font-size: 0.7em;
       color: #bbdefb;
       text-align: left;
       flex: 1;
     }
     .location-image {
-      width: 86.4px; /* 元72pxの1.2倍 */
+      width: 86.4px;
       height: auto;
       flex-shrink: 0;
     }
     .structure-image {
-      width: 260px;
+      width: 416px; /* 元260px ×1.6倍 */
       opacity: 0.35;
       position: absolute;
       top: 420px;
+      right: 80px;
       z-index: 0;
     }
     section {
@@ -60,7 +61,7 @@
       border-left: 6px solid #42a5f5;
       border-radius: 12px;
       padding: 12px 20px;
-      margin: 0 20px 10px;
+      margin: 30px 20px; /* 上下の間隔を拡大 */
       width: 90%;
       max-width: 900px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
@@ -90,7 +91,7 @@
       padding-bottom: 40px;
     }
     .gimmick-beaker {
-      width: 38.4px; /* 元48pxの0.8倍 */
+      width: 30.7px; /* 元38.4pxの0.8倍 */
       position: fixed;
       bottom: 20px;
       left: 20px;
@@ -109,7 +110,7 @@
 <body>
 
   <header>
-    <!-- タイトル画像のみ -->
+    <!-- タイトル画像 -->
     <img class="title-image" src="CE0B1375-13CE-4E3C-B8CF-E96F4F6F5F98.jpeg" alt="タイトル画像">
     <div class="location-container">
       <p class="location">📍場所：2階 3年3組教室</p>
@@ -120,6 +121,7 @@
   <!-- 構造式画像 -->
   <img class="structure-image" src="https://science-illust.com/wp-content/uploads/2021/03/taxol_3-2.png" alt="構造式" />
 
+  <!-- 左下の緑フラスコ -->
   <img class="gimmick-beaker" src="https://science-illust.com/wp-content/uploads/2022/10/tt_green.png" alt="green flask" />
 
   <section>
@@ -155,5 +157,6 @@
   <footer>
     <p>© 2025 3-3 Escape Lab. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
