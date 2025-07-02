@@ -2,186 +2,151 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>研究所×脱出ゲーム</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Zen+Dots&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>フジワラボ脱出ゲーム</title>
   <style>
-    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: 'Noto Sans JP', sans-serif;
-      background-color: #e3f2fd;
-      background-image: linear-gradient(90deg, transparent 96%, white 96%),
-                        linear-gradient(0deg, transparent 96%, white 96%);
-      background-size: 67.5px 67.5px;
-      background-repeat: repeat;
-      color: #0d47a1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    header {
-      background: linear-gradient(to right, #1a237e, #3949ab);
-      color: #fff;
-      width: 100%;
-      padding: 50px 20px;
+      padding: 0;
+      font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      background: #e0f4ff url('structure.png') no-repeat center top;
+      background-size: contain;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-      animation: headerEnter 1.5s ease-in-out forwards;
     }
-    header h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 3.2em;
-      margin: 0;
-      color: #4fc3f7;
-      text-shadow:
-        -10px -10px 0 white,
-         10px -10px 0 white,
-        -10px  10px 0 white,
-         10px  10px 0 white;
+
+    header {
+      background: linear-gradient(to bottom, #1e3c72, #2a5298);
+      color: white;
+      padding: 20px 10px 40px;
     }
-    header p {
-      font-size: 1.1em;
-      margin-top: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+
+    header img {
+      width: 90%;
+      max-width: 500px;
+      display: block;
+      margin: 0 auto 10px;
     }
+
     .location-container {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 0 30px;
-      flex-wrap: wrap;
-    }
-    .location {
-      font-size: 1.3em;
-      color: #bbdefb;
-      text-align: left;
-      flex: 1;
-    }
-    .location-image {
-      width: 72px;
-      height: auto;
-      flex-shrink: 0;
+      justify-content: center;
+      gap: 10px;
     }
 
-    .structure-image {
-      width: 300px;
-      opacity: 0.35;
-      position: absolute;
-      top: 420px;
-      z-index: 0;
+    .location {
+      font-size: 1.3em;
+      margin: 0;
+      color: #cce0ff;
+    }
+
+    .location-image {
+      width: 60px;
+      height: auto;
     }
 
     section {
-      background: #ffffff;
-      border-left: 6px solid #42a5f5;
-      border-radius: 12px;
-      padding: 12px 20px;
-      margin: 10px 20px;
-      width: 90%;
-      max-width: 900px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-      position: relative;
-      z-index: 1;
-      animation: fadeUp 0.9s ease-out;
-    }
-    section h2 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 1.5em;
-      color: #1565c0;
-      margin: 0 0 6px;
-    }
-    section p, a {
-      font-size: 1em;
-      color: #1a237e;
-      text-decoration: none;
-      margin: 0;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #546e7a;
-      text-align: center;
-      padding-bottom: 40px;
-    }
-    .gimmick-beaker {
-      width: 48px;
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      animation: wiggle 2s infinite;
-      z-index: 10;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 15px;
     }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      position: relative;
     }
-    @keyframes headerEnter {
-      0% { opacity: 0; transform: translateY(-50px); }
-      100% { opacity: 1; transform: translateY(0); }
+
+    .card h2 {
+      color: #005bbb;
+      font-size: 1.3em;
+      margin: 0;
+      padding-top: 0;
     }
-    @keyframes wiggle {
-      0% { transform: rotate(0deg); }
-      25% { transform: rotate(3deg); }
-      50% { transform: rotate(-3deg); }
-      75% { transform: rotate(2deg); }
-      100% { transform: rotate(0deg); }
+
+    .card p {
+      color: #333;
+      text-align: left;
+      margin: 10px 0 0;
+    }
+
+    .flask {
+      position: absolute;
+      left: -40px;
+      top: 10px;
+      width: 40px;
+      height: auto;
+    }
+
+    .instagram {
+      margin: 40px 0 20px;
+    }
+
+    .instagram a {
+      color: #bc2a8d;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* 太めの背景マス目 */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to right, rgba(255,255,255,0.3) 1px, transparent 1px), 
+                        linear-gradient(to bottom, rgba(255,255,255,0.3) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: -1;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>研究所<br>×<br>脱出ゲーム</h1>
+    <img src="CE0B1375-13CE-4E3C-B8CF-E96F4F6F5F98.jpeg" alt="研究所×脱出ゲーム" />
     <div class="location-container">
       <p class="location">📍場所：2階 3年3組教室</p>
-      <img class="location-image" src="https://tyoudoii-illust.com/wp-content/uploads/2021/02/aisome_school_mono.png" alt="school illustration" />
+      <img class="location-image" src="school.png" alt="学校イラスト" />
     </div>
   </header>
 
-  <img class="structure-image" src="https://science-illust.com/wp-content/uploads/2021/03/taxol_3-2.png" alt="構造式" />
-
-  <img class="gimmick-beaker" src="https://science-illust.com/wp-content/uploads/2022/10/tt_green.png" alt="green flask" />
-
   <section>
-    <h2>出し物紹介</h2>
-    <p>研究員に扮した3-3の生徒たちが白衣でお出迎え！お客さんは謎解きに挑戦し、研究所からの脱出を目指します！</p>
+    <div class="card">
+      <h2>出し物紹介</h2>
+      <p>研究員に扮した3-3の生徒たちが白衣でお出迎え！お客さんは謎解きに挑戦し、研究所からの脱出を目指します！</p>
+    </div>
+
+    <div class="card">
+      <img src="flask.png" alt="フラスコ" class="flask" />
+      <h2>ストーリー</h2>
+      <p>秘密実験中に突如鳴り響くアラーム音…！閉じ込められた研究所に残された手がかりをたよりに、無事脱出できるか！？</p>
+    </div>
+
+    <div class="card">
+      <h2>待ち時間</h2>
+      <p>待ち時間はWebサイト上でリアルタイム表示！スムーズな参加が可能です。</p>
+    </div>
+
+    <div class="card">
+      <h2>お試し謎</h2>
+      <p>参加前にチャレンジできる謎をこのサイトに公開予定！本番に備えよう！</p>
+    </div>
+
+    <div class="card">
+      <h2>準備の様子</h2>
+      <p>企画から装飾まで、すべて生徒が手がけています！その裏側をぜひご覧ください。</p>
+    </div>
+
+    <div class="instagram">
+      <p>Instagramもチェック 👉 <a href="https://www.instagram.com/">@fujilab_escape</a></p>
+    </div>
   </section>
 
-  <section>
-    <h2>ストーリー</h2>
-    <p>極秘実験中に突如鳴り響くアラーム音――！閉じ込められた研究所に残された手がかりをたよりに、無事脱出できるか！？</p>
-  </section>
-
-  <section>
-    <h2>待ち時間</h2>
-    <p>リアルタイムでの待ち時間表示を予定しています！</p>
-  </section>
-
-  <section>
-    <h2>お試し謎</h2>
-    <p>ここでしか解けないミニ謎解きを後日公開予定！</p>
-  </section>
-
-  <section>
-    <h2>準備の様子</h2>
-    <p>脱出研究所の裏側をチラ見せ！当日までの準備風景もアップしていきます。</p>
-  </section>
-
-  <section>
-    <h2>Instagram</h2>
-    <p><a href="#">公式インスタグラム（後日公開）</a></p>
-  </section>
-
-  <footer>
-    <p>© 2025 3-3 Escape Lab. All rights reserved.</p>
-  </footer>
 </body>
 </html>
