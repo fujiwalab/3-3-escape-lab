@@ -3,86 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>フジワラボ</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <title>研究所×脱出ゲーム</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Zen+Dots&family=Noto+Sans+JP&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: 'Noto Sans JP', sans-serif;
       background-color: #e3f2fd;
-      background-image: linear-gradient(90deg, transparent 96%, white 96%), linear-gradient(0deg, transparent 96%, white 96%);
-      background-size: 67.5px 67.5px;
+      background-image: linear-gradient(90deg, transparent 96%, white 96%),
+                        linear-gradient(0deg, transparent 96%, white 96%);
+      background-size: 47.25px 47.25px;
+      color: #0d47a1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      position: relative;
-      color: #0d47a1;
     }
+
     header {
       background: linear-gradient(to right, #1a237e, #3949ab);
       color: #fff;
       width: 100%;
-      padding: 40px 20px 20px;
+      padding: 50px 20px 30px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+      animation: headerEnter 1.5s ease-in-out forwards;
     }
-    header img.title-image {
-      max-width: 90%;
+
+    .title-image {
+      width: 90%;
+      max-width: 600px;
       height: auto;
+      margin: 0 auto;
     }
+
     .location-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 12px 30px 0;
-      flex-wrap: wrap;
+      max-width: 500px;
+      margin: 20px auto 0;
+      padding: 0 20px;
     }
+
     .location {
-      font-size: 0.7em;
+      font-size: 1.14em; /* ←1.2倍 */
       color: #bbdefb;
-      text-align: left;
-      flex: 1;
     }
+
     .location-image {
-      width: 86.4px;
+      width: 66px; /* 1.2倍に */
       height: auto;
-      flex-shrink: 0;
     }
-    .structure-image {
-      width: 416px; /* 元260px ×1.6倍 */
-      opacity: 0.35;
+
+    .structure-img {
       position: absolute;
       top: 420px;
-      right: 80px;
-      z-index: 0;
+      right: 30px;
+      width: 40%;
+      max-width: 380px;
+      z-index: 1;
+      opacity: 0.8;
     }
+
     section {
       background: #ffffff;
       border-left: 6px solid #42a5f5;
       border-radius: 12px;
-      padding: 12px 20px;
-      margin: 30px 20px; /* 上下の間隔を拡大 */
+      padding: 16px 24px;
+      margin: 90px 20px; /* セクション間の余白を拡大 */
       width: 90%;
       max-width: 900px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
       position: relative;
-      z-index: 1;
+      z-index: 2;
+      animation: fadeUp 0.9s ease-out;
     }
+
     section h2 {
       font-family: 'Orbitron', sans-serif;
       font-size: 1.5em;
       color: #1565c0;
-      margin: 0 0 6px;
+      margin-bottom: 10px;
     }
+
     section p, a {
       font-size: 1em;
       color: #1a237e;
       text-decoration: none;
-      margin: 0;
+      margin-top: 10px;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
     footer {
       margin-top: 40px;
       font-size: 0.9em;
@@ -90,14 +107,26 @@
       text-align: center;
       padding-bottom: 40px;
     }
+
     .gimmick-beaker {
-      width: 30.7px; /* 元38.4pxの0.8倍 */
+      width: 48px; /* 0.8倍に調整 */
       position: fixed;
       bottom: 20px;
       left: 20px;
       animation: wiggle 2s infinite;
       z-index: 10;
     }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes headerEnter {
+      0% { opacity: 0; transform: translateY(-50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
     @keyframes wiggle {
       0% { transform: rotate(0deg); }
       25% { transform: rotate(3deg); }
@@ -110,47 +139,49 @@
 <body>
 
   <header>
-    <!-- タイトル画像 -->
-    <img class="title-image" src="CE0B1375-13CE-4E3C-B8CF-E96F4F6F5F98.jpeg" alt="タイトル画像">
+    <img class="title-image" src="your-title-image-url-here.jpg" alt="タイトル画像">
     <div class="location-container">
       <p class="location">📍場所：2階 3年3組教室</p>
       <img class="location-image" src="https://tyoudoii-illust.com/wp-content/uploads/2021/02/aisome_school_mono.png" alt="school illustration" />
     </div>
   </header>
 
-  <!-- 構造式画像 -->
-  <img class="structure-image" src="https://science-illust.com/wp-content/uploads/2021/03/taxol_3-2.png" alt="構造式" />
-
-  <!-- 左下の緑フラスコ -->
+  <img class="structure-img" src="https://science-illust.com/wp-content/uploads/2021/03/taxol_3-2.png" alt="構造式" />
   <img class="gimmick-beaker" src="https://science-illust.com/wp-content/uploads/2022/10/tt_green.png" alt="green flask" />
 
   <section>
     <h2>出し物紹介</h2>
+    <br>
     <p>研究員に扮した3-3の生徒たちが白衣でお出迎え！お客さんは謎解きに挑戦し、研究所からの脱出を目指します！</p>
   </section>
 
   <section>
     <h2>ストーリー</h2>
+    <br>
     <p>極秘実験中に突如鳴り響くアラーム音――！閉じ込められた研究所に残された手がかりをたよりに、無事脱出できるか！？</p>
   </section>
 
   <section>
     <h2>待ち時間</h2>
+    <br>
     <p>リアルタイムでの待ち時間表示を予定しています！</p>
   </section>
 
   <section>
     <h2>お試し謎</h2>
+    <br>
     <p>ここでしか解けないミニ謎解きを後日公開予定！</p>
   </section>
 
   <section>
     <h2>準備の様子</h2>
+    <br>
     <p>脱出研究所の裏側をチラ見せ！当日までの準備風景もアップしていきます。</p>
   </section>
 
   <section>
     <h2>Instagram</h2>
+    <br>
     <p><a href="#">公式インスタグラム（後日公開）</a></p>
   </section>
 
