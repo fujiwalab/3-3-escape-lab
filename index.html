@@ -11,14 +11,14 @@
       margin: 0;
       font-family: 'Noto Sans JP', sans-serif;
       background-color: #e3f2fd;
-      background-image: linear-gradient(90deg, transparent 99%, white 99%),
-                        linear-gradient(0deg, transparent 99%, white 99%);
+      background-image: linear-gradient(90deg, transparent 96%, white 96%),
+                        linear-gradient(0deg, transparent 96%, white 96%);
       background-size: 67.5px 67.5px;
+      background-repeat: repeat;
       color: #0d47a1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      position: relative;
     }
     header {
       background: linear-gradient(to right, #1a237e, #3949ab);
@@ -29,84 +29,81 @@
       position: relative;
       overflow: hidden;
       animation: headerEnter 1.5s ease-in-out forwards;
-      z-index: 3;
     }
     header h1 {
       font-family: 'Orbitron', sans-serif;
       font-size: 3.2em;
       margin: 0;
       color: #4fc3f7;
-      text-shadow: 
-        -2px -2px 0 white,
-        2px -2px 0 white,
-        -2px 2px 0 white,
-        2px 2px 0 white,
-        -4px -4px 0 white,
-        4px -4px 0 white,
-        -4px 4px 0 white,
-        4px 4px 0 white;
+      text-shadow:
+        -10px -10px 0 white,
+         10px -10px 0 white,
+        -10px  10px 0 white,
+         10px  10px 0 white;
     }
-
+    header p {
+      font-size: 1.1em;
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     .location-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 12px;
+      padding: 0 30px;
       flex-wrap: wrap;
-      padding: 0 20px;
-      margin-top: 12px;
     }
     .location {
       font-size: 1.3em;
       color: #bbdefb;
       text-align: left;
-      width: 50%;
+      flex: 1;
     }
     .location-image {
-      width: calc(71.5px * 1.2); /* 1.2倍 */
+      width: 72px;
       height: auto;
-      float: right;
+      flex-shrink: 0;
     }
 
-    /* Taxol構造式画像 */
-    .taxol-image {
+    .structure-image {
+      width: 300px;
+      opacity: 0.35;
       position: absolute;
       top: 420px;
-      left: 50%;
-      transform: translateX(-50%) scale(0.9); /* 小さく */
-      opacity: 0.6;
       z-index: 0;
-      pointer-events: none;
     }
 
     section {
       background: #ffffff;
       border-left: 6px solid #42a5f5;
       border-radius: 12px;
-      padding: 10px 24px;
+      padding: 12px 20px;
       margin: 10px 20px;
       width: 90%;
       max-width: 900px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
       position: relative;
+      z-index: 1;
       animation: fadeUp 0.9s ease-out;
-      z-index: 2;
     }
     section h2 {
       font-family: 'Orbitron', sans-serif;
       font-size: 1.5em;
       color: #1565c0;
-      margin-bottom: 6px;
+      margin: 0 0 6px;
     }
     section p, a {
       font-size: 1em;
       color: #1a237e;
       text-decoration: none;
-      margin-bottom: 6px;
+      margin: 0;
     }
     a:hover {
       text-decoration: underline;
     }
-
     footer {
       margin-top: 40px;
       font-size: 0.9em;
@@ -114,16 +111,13 @@
       text-align: center;
       padding-bottom: 40px;
     }
-
     .gimmick-beaker {
-      width: 60px;
+      width: 48px;
       position: fixed;
       bottom: 20px;
       left: 20px;
       animation: wiggle 2s infinite;
       z-index: 10;
-      transform: scale(0.96); /* 0.8倍に調整 */
-      transform-origin: bottom left;
     }
 
     @keyframes fadeUp {
@@ -135,11 +129,11 @@
       100% { opacity: 1; transform: translateY(0); }
     }
     @keyframes wiggle {
-      0% { transform: rotate(0deg) scale(0.96); }
-      25% { transform: rotate(3deg) scale(0.96); }
-      50% { transform: rotate(-3deg) scale(0.96); }
-      75% { transform: rotate(2deg) scale(0.96); }
-      100% { transform: rotate(0deg) scale(0.96); }
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(3deg); }
+      50% { transform: rotate(-3deg); }
+      75% { transform: rotate(2deg); }
+      100% { transform: rotate(0deg); }
     }
   </style>
 </head>
@@ -152,19 +146,15 @@
     </div>
   </header>
 
-  <!-- 左下のフラスコ -->
+  <img class="structure-image" src="https://science-illust.com/wp-content/uploads/2021/03/taxol_3-2.png" alt="構造式" />
+
   <img class="gimmick-beaker" src="https://science-illust.com/wp-content/uploads/2022/10/tt_green.png" alt="green flask" />
 
-  <!-- 出し物紹介 -->
   <section>
     <h2>出し物紹介</h2>
     <p>研究員に扮した3-3の生徒たちが白衣でお出迎え！お客さんは謎解きに挑戦し、研究所からの脱出を目指します！</p>
   </section>
 
-  <!-- Taxol構造式画像 -->
-  <img class="taxol-image" src="https://science-illust.com/wp-content/uploads/2021/03/taxol_3-2.png" alt="構造式イラスト" />
-
-  <!-- ストーリー -->
   <section>
     <h2>ストーリー</h2>
     <p>極秘実験中に突如鳴り響くアラーム音――！閉じ込められた研究所に残された手がかりをたよりに、無事脱出できるか！？</p>
