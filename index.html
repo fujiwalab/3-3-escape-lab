@@ -14,19 +14,18 @@
 
     body {
       font-family: 'Noto Sans JP', sans-serif;
-      background-color:#ccc;
+      background-color: #ccc;
       background-image: 
         linear-gradient(to right, rgba(255,255,255,0.3) 2px, transparent 1px),
         linear-gradient(to bottom, rgba(255,255,255,0.3) 2px, transparent 1px);
       background-size: 40px 40px;
-      color: #0d1b2a ;
+      color: #0d1b2a;
       line-height: 1.6;
     }
 
     header {
       background: #006e54;
       color: #fff;
-
       text-align: center;
       padding: 60px 20px 30px;
       position: relative;
@@ -45,6 +44,7 @@
       gap: 12px;
       font-size: 1.1em;
       color: #f1f1f1;
+      margin-top: 10px;
     }
 
     .location-image {
@@ -56,12 +56,11 @@
       position: absolute;
       top: 200px;
       left: 20px;
-      weidh: 100%;
+      width: 100%;
       max-width: 150px;
       opacity: 1.0;
       z-index: 0;
     }
-    
 
     .gimmick-beaker {
       position: fixed;
@@ -73,29 +72,22 @@
     }
 
     main {
-  padding: 60px 20px;
+      padding: 60px 20px;
+      background-image: 
+        url("https://science-illust.com/wp-content/uploads/2021/03/taxol_3-2.png"), 
+        url("無題53_20250702233700.png");
+      background-size: 
+        250px auto,
+        250px auto;
+      background-position: 
+        right 0px top 180px,
+        left 0px top 400px;
+      background-repeat: 
+        no-repeat,
+        no-repeat;
+      background-attachment: scroll;
+    }
 
-  background-image: 
-    url("https://science-illust.com/wp-content/uploads/2021/03/taxol_3-2.png"), 
-    url("無題53_20250702233700.png");
-
-  background-size: 
-    250px auto,
-    250px auto;
-
-  background-position: 
-    left 0px top 400px,
-    right 0px top 180px;
-
-  background-repeat: 
-    no-repeat,
-    no-repeat;
-
-  background-attachment: scroll;
-}
-    
-    
-    
     section {
       background: rgba(255, 255, 255, 0.6);
       border: 1px solid #ccc;
@@ -148,21 +140,16 @@
 <body>
 
   <header>
-    
     <img class="title-image" src="無題50_20250709163656.png" alt="タイトル画像">
 
-    <h5>
     <div class="location-container">
-      <p class="location"><img src="https://illustkun.com/wp-content/uploads/illustkun-03276-blackboard-eraser.png"
-        alt="アイコン" vertical-align: middle; style="width: 80px; margin-right: 6px;">📍場所：2階 3年3組教室</p>
+      <img src="https://illustkun.com/wp-content/uploads/illustkun-03276-blackboard-eraser.png"
+        alt="アイコン" style="width: 80px; margin-right: 6px;">
+      📍場所：2階 3年3組教室
       <img class="location-image" src="https://tyoudoii-illust.com/wp-content/uploads/2021/02/aisome_school_mono.png" alt="school illustration" />
     </div>
-     </h5>
 
-    
-    <img class="structure-img" src="https://science-illust.com/wp-content/uploads/2021/04/vaccine.png
-
-" alt="構造式" />
+    <img class="structure-img" src="https://science-illust.com/wp-content/uploads/2021/04/vaccine.png" alt="構造式" />
   </header>
 
   <img class="gimmick-beaker" src="https://illustkun.com/wp-content/uploads/illustkun-04102-beaker.png" alt="green flask" />
@@ -180,7 +167,7 @@
     </section>
 
     <section>
-      <h2>待ち時間🕒 </h2>
+      <h2>待ち時間🕒</h2>
       <p>リアルタイムでの待ち時間表示を予定しています！</p>
     </section>
 
@@ -190,18 +177,23 @@
     </section>
 
     <section>
-      <h2>準備の様子<img src="https://illustkun.com/wp-content/uploads/2018/11/illustkun-02059-rubber-hammer.png"
-        alt="アイコン" style="width: 30px; vertical-align: middle;margin-right: 6px;"></h2>
+      <h2>
+        準備の様子
+        <img src="https://illustkun.com/wp-content/uploads/2018/11/illustkun-02059-rubber-hammer.png"
+        alt="アイコン" style="width: 30px; vertical-align: middle; margin-left: 6px;">
+      </h2>
       <p>脱出研究所の裏側をチラ見せ！当日までの準備風景もアップしていきます。</p>
     </section>
 
-    
-
     <section>
-      <h2>Instagram<img src="IMG_0071.png"
-        alt="アイコン" style="width: 30px; vertical-align: middle;margin-right: 6px;"> </h2>
+      <h2>
+        Instagram
+        <img src="IMG_0071.png"
+        alt="アイコン" style="width: 30px; vertical-align: middle; margin-left: 6px;">
+      </h2>
       <p><a href="#">公式インスタグラム（後日公開）</a></p>
     </section>
+
   </main>
 
   <footer>
