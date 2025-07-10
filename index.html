@@ -104,7 +104,22 @@
       padding-bottom: 6px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .toggle-btn {
+      background: none;
+      border: none;
+      font-size: 0.85em;
+      color: #0d47a1;
+      cursor: pointer;
+      padding: 2px 4px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+
+    .toggle-btn:hover {
+      background-color: rgba(0,0,0,0.1);
     }
 
     section p, a {
@@ -115,22 +130,6 @@
 
     a:hover {
       text-decoration: underline;
-    }
-
-    .toggle-btn {
-      background: none;
-      border: none;
-      font-size: 0.9em;
-      color: #0d47a1;
-      cursor: pointer;
-      margin-left: 10px;
-      padding: 2px 6px;
-      border-radius: 4px;
-      transition: background 0.2s;
-    }
-
-    .toggle-btn:hover {
-      background-color: rgba(0,0,0,0.1);
     }
 
     footer {
@@ -174,7 +173,7 @@
 
     <section>
       <h2>
-        ストーリー
+        <span>ストーリー</span>
         <button class="toggle-btn" onclick="toggleStory()" id="toggle-icon">▽ 開く</button>
       </h2>
 
@@ -230,7 +229,7 @@
     function toggleStory() {
       const content = document.getElementById("story-more");
       const icon = document.getElementById("toggle-icon");
-      
+
       if (content.style.display === "none") {
         content.style.display = "block";
         icon.textContent = "△ 閉じる";
