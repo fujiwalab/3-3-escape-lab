@@ -102,6 +102,9 @@
       margin-bottom: 15px;
       border-bottom: 2px solid #f9a825;
       padding-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     section p, a {
@@ -117,16 +120,17 @@
     .toggle-btn {
       background: none;
       border: none;
-      font-size: 1.3em;
+      font-size: 0.9em;
       color: #0d47a1;
       cursor: pointer;
       margin-left: 10px;
-      font-weight: bold;
-      padding: 0;
+      padding: 2px 6px;
+      border-radius: 4px;
+      transition: background 0.2s;
     }
 
     .toggle-btn:hover {
-      text-decoration: underline;
+      background-color: rgba(0,0,0,0.1);
     }
 
     footer {
@@ -169,31 +173,21 @@
     </section>
 
     <section>
-      <div style="display: flex; justify-content: space-between; align-items: center;">
-        <h2 style="margin-bottom: 0;">ストーリー</h2>
-        <button class="toggle-btn" onclick="toggleStory()" id="toggle-icon">▽</button>
-      </div>
+      <h2>
+        ストーリー
+        <button class="toggle-btn" onclick="toggleStory()" id="toggle-icon">▽ 開く</button>
+      </h2>
 
       <div class="story-intro" style="margin-top: 15px;">
         <p>研究者を夢見る高校生のあなたに、ついに研究所見学のチャンスが訪れた。</p>
         <p>期待に胸を膨らませ、案内された研究室へと足を踏み入れる。</p>
-        
         <p>――その瞬間、アラートが鳴り響く。</p>
       </div>
 
       <div id="story-more" style="display: none; margin-top: 12px;">
-
-        
-        <p>＊緊急事態発生‼️緊急事態発生‼️
-        <br>10分後にこの研究室をロックダウンします＊</p>
-
-        
-        <p>突如として研究室に閉じ込められたあなた。
-          <br>残されたのはわずかな時間と、いくつかの手がかりだけ。</p>
-
-        
+        <p>＊緊急事態発生‼️緊急事態発生‼️<br>10分後にこの研究室をロックダウンします＊</p>
+        <p>突如として研究室に閉じ込められたあなた。<br>残されたのはわずかな時間と、いくつかの手がかりだけ。</p>
         <p>あなたは10分以内に、すべての謎を解き、この部屋から脱出できるのか？</p>
-        
         <p>夢に近づいたその日、あなたは夢に閉じ込められた。</p>
       </div>
     </section>
@@ -239,10 +233,10 @@
       
       if (content.style.display === "none") {
         content.style.display = "block";
-        icon.textContent = "△";
+        icon.textContent = "△ 閉じる";
       } else {
         content.style.display = "none";
-        icon.textContent = "▽";
+        icon.textContent = "▽ 開く";
       }
     }
   </script>
