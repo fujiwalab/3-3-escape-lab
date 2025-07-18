@@ -62,6 +62,35 @@
       width: 110px;
       animation: wiggle 2s infinite;
       z-index: 999;
+      cursor: pointer;
+    }
+
+    #bubble-container {
+      position: fixed;
+      bottom: 100px;
+      left: 40px;
+      z-index: 1000;
+      pointer-events: none;
+    }
+
+    .bubble {
+      width: 25px;
+      height: 25px;
+      background-image: url('https://cdn.pixabay.com/photo/2017/01/31/20/24/bubbles-2021988_960_720.png');
+      background-size: cover;
+      position: absolute;
+      animation: rise 2.5s ease-out forwards;
+    }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-150px) scale(0.5);
+        opacity: 0;
+      }
     }
 
     main {
@@ -162,7 +191,8 @@
     </div>
   </header>
 
-  <img class="gimmick-beaker" src="https://illustkun.com/wp-content/uploads/illustkun-04102-beaker.png" alt="green flask" />
+  <img class="gimmick-beaker" src="https://illustkun.com/wp-content/uploads/illustkun-04102-beaker.png" alt="green flask" id="beaker" />
+  <div id="bubble-container"></div>
 
   <main>
 
@@ -244,6 +274,21 @@
         icon.textContent = "▽ 開く";
       }
     }
+
+    // 泡の生成スクリプト
+    const beaker = document.getElementById('beaker');
+    const container = document.getElementById('bubble-container');
+
+    beaker.addEventListener('click', () => {
+      const bubble = document.createElement('div');
+      bubble.classList.add('bubble');
+      bubble.style.left = `${Math.random() * 40}px`; // ランダム位置
+      container.appendChild(bubble);
+
+      setTimeout(() => {
+        bubble.remove();
+      }, 2500);
+    });
   </script>
 
 </body>
