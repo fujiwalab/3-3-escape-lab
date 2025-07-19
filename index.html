@@ -273,22 +273,6 @@
         content.style.display = "none";
         icon.textContent = "▽ 開く";
       }
-    }
-
-    // 泡の生成スクリプト
-    const beaker = document.getElementById('beaker');
-    const container = document.getElementById('bubble-container');
-
-    beaker.addEventListener('click', () => {
-      const bubble = document.createElement('div');
-      bubble.classList.add('bubble');
-      bubble.style.left = `${Math.random() * 40}px`; // ランダム位置
-      container.appendChild(bubble);
-
-      setTimeout(() => {
-        bubble.remove();
-      }, 2500);
-    });
   </script>
 
 </body>
