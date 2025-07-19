@@ -192,8 +192,8 @@
   </header>
 
   <img class="gimmick-beaker" src="https://illustkun.com/wp-content/uploads/illustkun-04102-beaker.png" alt="green flask" id="beaker" />
-  <img class="bubble-container" src="無題61_20250718213839.png">
-
+<div id="bubble-container" style="position: fixed; bottom: 100px; left: 40px; z-index: 1000; pointer-events: none;"></div>
+  
   <main>
 
     <section>
@@ -272,8 +272,26 @@
       } else {
         content.style.display = "none";
         icon.textContent = "▽ 開く";
-      }
-  </script>
+      } }</script>
 
+<script>
+  const beaker = document.getElementById('beaker');
+  const container = document.getElementById('bubble-container');
+
+  beaker.addEventListener('click', () => {
+    const bubble = document.createElement('img');
+    bubble.src = '無題61_20250718213839.png'; // 泡の画像のファイル名・パス
+    bubble.style.width = '25px';
+    bubble.style.height = '25px';
+    bubble.style.userSelect = 'none';
+
+    container.appendChild(bubble);
+
+    setTimeout(() => {
+      bubble.remove();
+    }, 2000);
+  });
+</script>
+  
 </body>
 </html>
