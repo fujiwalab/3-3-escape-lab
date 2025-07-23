@@ -229,10 +229,12 @@
 
 <section>
   <h2>待ち時間🕒</h2>
+  <p>只今</p>
   <div id="wait-time" style="font-size: 2.0em; font-weight: bold; color: #000000; margin-top: 10px;">
     
-    只今「更新中...」待ち
+    「更新中...」
   </div>
+  <p>待ち</p>
 </section>
 
 <script>
@@ -245,7 +247,7 @@
 
     const waitTimeElement = document.getElementById("wait-time");
     if (waitTimeElement && waitTime) {
-      waitTimeElement.textContent = `只今「${waitTime}」待ち`;
+      waitTimeElement.textContent = `「${waitTime}」`;
     }
   }
 
