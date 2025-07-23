@@ -75,6 +75,7 @@
       animation: wiggle 2s infinite;
       z-index: 999;
       cursor: pointer;
+      will-change: transform;
     }
 
     #bubble-container {
@@ -327,10 +328,10 @@
     }, 2000);
 
     // === 画面を揺らす ===
-    document.body.classList.add('shake');
-    setTimeout(() => {
-      document.body.classList.remove('shake');
-    }, 400);
+   beaker.classList.add('shake');
+setTimeout(() => {
+  beaker.classList.remove('shake');
+}, 400);
   });
 </script>
   
