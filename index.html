@@ -324,13 +324,13 @@ beaker.addEventListener("click", function () {
   // 一定時間で泡を消す
   setTimeout(() => {
     bubble.remove();
-  }, 2000);
+  }, 1000);
 
   // === 画面全体を揺らす（bodyにshakeをつける）===
   document.body.classList.add('shake');
   setTimeout(() => {
     document.body.classList.remove('shake');
-  }, 400);
+  }, 800);
 });
   
 </script>
