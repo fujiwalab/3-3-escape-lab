@@ -312,27 +312,27 @@
 <script>
   const beaker = document.getElementById("beaker");
   const container = document.getElementById("bubble-container");
+beaker.addEventListener("click", function () {
+  // 泡の画像を作って追加
+  const bubble = document.createElement('img');
+  bubble.src = '無題63_20250719211249.png'; // 丸い泡の画像
+  bubble.style.width = '100px';
+  bubble.style.height = '200px';
+  bubble.style.userSelect = 'none';
+  container.appendChild(bubble);
 
-  beaker.addEventListener("click", function () {
-    // 泡の画像を作って追加
-    const bubble = document.createElement('img');
-    bubble.src = '無題63_20250719211249.png'; // 丸い泡の画像
-    bubble.style.width = '100px';
-    bubble.style.height = '200px';
-    bubble.style.userSelect = 'none';
-    container.appendChild(bubble);
+  // 一定時間で泡を消す
+  setTimeout(() => {
+    bubble.remove();
+  }, 2000);
 
-    // 一定時間で泡を消す
-    setTimeout(() => {
-      bubble.remove();
-    }, 2000);
-
-    // === 画面を揺らす ===
-   beaker.classList.add('shake');
-setTimeout(() => {
-  beaker.classList.remove('shake');
-}, 400);
-  });
+  // === 画面全体を揺らす（bodyにshakeをつける）===
+  document.body.classList.add('shake');
+  setTimeout(() => {
+    document.body.classList.remove('shake');
+  }, 400);
+});
+  
 </script>
   
 </body>
