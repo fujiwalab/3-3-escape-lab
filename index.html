@@ -6,6 +6,37 @@
   <title>研究所×脱出ゲーム</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Zen+Dots&family=Noto+Sans+JP&display=swap" rel="stylesheet">
   <style>
+    .countdown-message {
+  position: fixed;
+  bottom: 140px; /* ビーカーのちょっと上 */
+  left: 20px;
+  background: white;
+  color: #222;
+  font-weight: bold;
+  padding: 10px 18px;
+  border: 2px solid #bbb;
+  border-radius: 20px;
+  font-size: 1.1em;
+  white-space: nowrap;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  transition: opacity 0.3s;
+}
+
+.countdown-message::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 20px;
+  border-width: 12px 12px 0;
+  border-style: solid;
+  border-color: #fff transparent transparent;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
     @keyframes shake {
       0% { transform: translate(0px, 0px); }
       20% { transform: translate(-5px, 5px); }
@@ -243,11 +274,7 @@
       <section>
         <h2>待ち時間🕒</h2>
         リアルタイムでの待ち時間表示を予定しています！
-        <p>
-          <span>柊祭まであと</span>
-          <span id="wait-time" style="font-size: 2em; font-weight: bold;">更新中...</span>
-          <span></span>
-        </p>
+       
       </section>
 
       <section>
@@ -287,6 +314,7 @@
   </div>
 
   <img class="gimmick-beaker" src="https://illustkun.com/wp-content/uploads/illustkun-04102-beaker.png" alt="green flask" id="beaker" />
+ <div id="countdown-message" class="countdown-message hidden">柊祭まであと〇日‼️</div>
   <div id="bubble-container"></div>
 
   <script>
@@ -323,20 +351,34 @@
     const wrapper = document.getElementById("wrapper");
 
     beaker.addEventListener("click", function () {
-      const bubble = document.createElement('img');
-      bubble.src = '無題63_20250719211249.png';
-      bubble.className = 'bubble';
-      container.appendChild(bubble);
+  // 泡の画像追加（既存）
+  const bubble = document.createElement('img');
+  bubble.src = '無題63_20250719211249.png';
+  bubble.className = 'bubble';
+  container.appendChild(bubble);
+  setTimeout(() => {
+    bubble.remove();
+  }, 1000);
 
-      setTimeout(() => {
-        bubble.remove();
-      }, 1000);
+  // 💡カウントダウンの吹き出し表示
+  const msg = document.getElementById("countdown-message");
+  const today = new Date();
+  const target = new Date("2025-09-06");
+  const diff = target - today;
+  const daysLeft = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+  msg.textContent = `柊祭まであと${daysLeft}日‼️`;
+  msg.classList.remove("hidden");
 
-      wrapper.classList.add('shake');
-      setTimeout(() => {
-        wrapper.classList.remove('shake');
-      }, 800);
-    });
+  setTimeout(() => {
+    msg.classList.add("hidden");
+  }, 2500);
+
+  // 画面揺れ（既存）
+  wrapper.classList.add('shake');
+  setTimeout(() => {
+    wrapper.classList.remove('shake');
+  }, 800);
+});
   </script>
 
 </body>
