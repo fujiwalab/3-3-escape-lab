@@ -280,10 +280,51 @@
   </p>
 </section>
 
-      <section>
+            <section>
         <h2>お試し謎</h2>
         <p>ここでしか解けないミニ謎解きを後日公開予定！</p>
+        
+        <!-- 写真を表示 -->
+        <div style="text-align:center; margin: 20px 0;">
+          <img src="無題89_20250905024152.jpeg" alt="お試し謎画像" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+        </div>
+
+        <!-- 入力フォーム -->
+        <div style="text-align:center; margin-top: 15px;">
+          <input type="text" id="quiz-answer" placeholder="答えを入力" 
+                 style="padding: 8px; font-size: 1em; border-radius: 6px; border: 1px solid #888; width: 200px;">
+          <button onclick="checkAnswer()" 
+                  style="padding: 8px 14px; font-size: 1em; margin-left: 6px; border: none; border-radius: 6px; background: #006e54; color: white; cursor: pointer;">
+            送信
+          </button>
+        </div>
+
+        <!-- 判定表示 -->
+        <div id="quiz-result" style="text-align:center; margin-top: 12px; font-weight: bold; font-size: 1.2em;"></div>
       </section>
+
+<script>
+  function checkAnswer() {
+    const inputBox = document.getElementById("quiz-answer");
+    const input = inputBox.value.trim();
+    const result = document.getElementById("quiz-result");
+
+    // 正解リスト
+    const correctAnswers = ["いす", "椅子", "イス"];
+
+    if (correctAnswers.includes(input)) {
+      result.textContent = "✅ 正解！";
+      result.style.color = "green";
+    } else {
+      result.textContent = "❌ 不正解！";
+      result.style.color = "red";
+    }
+
+    // 入力欄は空にして再挑戦しやすくする
+    inputBox.value = "";
+    inputBox.focus();
+  }
+</script>
 
       <section>
         <h2>
