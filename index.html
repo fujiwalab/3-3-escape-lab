@@ -7,36 +7,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Zen+Dots&family=Noto+Sans+JP&display=swap" rel="stylesheet">
   <style>
     .countdown-message {
-  position: fixed;
-  bottom: 140px; /* ビーカーのちょっと上 */
-  left: 20px;
-  background: white;
-  color: #222;
-  font-weight: bold;
-  padding: 10px 18px;
-  border: 2px solid #bbb;
-  border-radius: 20px;
-  font-size: 1.1em;
-  white-space: nowrap;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1001;
-  transition: opacity 0.3s;
-}
+      position: fixed;
+      bottom: 140px;
+      left: 20px;
+      background: white;
+      color: #222;
+      font-weight: bold;
+      padding: 10px 18px;
+      border: 2px solid #bbb;
+      border-radius: 20px;
+      font-size: 1.1em;
+      white-space: nowrap;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1001;
+      transition: opacity 0.3s;
+    }
 
-.countdown-message::after {
-  content: '';
-  position: absolute;
-  bottom: -12px;
-  left: 20px;
-  border-width: 12px 12px 0;
-  border-style: solid;
-  border-color: #fff transparent transparent;
-}
+    .countdown-message::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 20px;
+      border-width: 12px 12px 0;
+      border-style: solid;
+      border-color: #fff transparent transparent;
+    }
 
-.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
+    .hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
     @keyframes shake {
       0% { transform: translate(0px, 0px); }
       20% { transform: translate(-5px, 5px); }
@@ -225,6 +226,59 @@
       75% { transform: rotate(2deg); }
       100% { transform: rotate(0deg); }
     }
+
+    /* ギャラリー用CSS */
+    .gallery-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .prep-gallery {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 12px 0;
+      max-width: 90%;
+      scrollbar-width: none;
+    }
+
+    .prep-gallery::-webkit-scrollbar {
+      display: none;
+    }
+
+    .prep-gallery img {
+      height: 180px;
+      border-radius: 12px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .scroll-btn {
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      font-size: 2em;
+      cursor: pointer;
+      padding: 8px 12px;
+      border-radius: 50%;
+      z-index: 10;
+      transition: background 0.3s;
+    }
+
+    .scroll-btn:hover {
+      background: rgba(0,0,0,0.7);
+    }
+
+    .scroll-btn.left {
+      margin-right: 8px;
+    }
+
+    .scroll-btn.right {
+      margin-left: 8px;
+    }
   </style>
 </head>
 <body>
@@ -242,7 +296,6 @@
     </header>
 
     <main>
-
       <section>
         <h2>出し物紹介</h2>
         <p>研究員に扮した3-3の生徒たちが白衣でお出迎え！お客さんは謎解きに挑戦し、研究所からの脱出を目指します！</p>
@@ -326,7 +379,6 @@
     inputBox.focus();
   }
 </script>
-
       <section>
         <h2>
           準備の様子
@@ -334,23 +386,32 @@
           alt="アイコン" style="width: 30px; vertical-align: middle; margin-left: 6px;">
         </h2>
         <p>研究所の裏側をチラ見せ！当日までの準備風景もアップしていきます。</p>
+
+        <div class="gallery-wrapper">
+          <button class="scroll-btn left" onclick="scrollGallery(-1)">&#9664;</button>
+          <div class="prep-gallery" id="prepGallery">
+            <img src="IMG_1662.jpeg" alt="準備風景1">
+            <img src="IMG_1652.jpeg" alt="準備風景2">
+            <img src="IMG_1660.jpeg" alt="準備風景3">
+            <img src="IMG_1661.jpeg" alt="準備風景4">
+          </div>
+          <button class="scroll-btn right" onclick="scrollGallery(1)">&#9654;</button>
+        </div>
       </section>
 
+      <!-- Instagramセクション -->
       <section>
-  <h2>
-    Instagram
-    <img src="IMG_0071.png"
-    alt="アイコン" style="width: 30px; vertical-align: middle; margin-left: 6px;">
-  </h2>
-  <p>
-    <a href="https://www.instagram.com/fujiwalab?igsh=dnB2NG9leTl2MzQ5&utm_source=qr" target="_blank" rel="noopener noreferrer">
-      公式インスタグラムはこちら
-    </a>
-  </p>
-</section>
-      
-      
-
+        <h2>
+          Instagram
+          <img src="IMG_0071.png"
+          alt="アイコン" style="width: 30px; vertical-align: middle; margin-left: 6px;">
+        </h2>
+        <p>
+          <a href="https://www.instagram.com/fujiwalab?igsh=dnB2NG9leTl2MzQ5&utm_source=qr" target="_blank" rel="noopener noreferrer">
+            公式インスタグラムはこちら
+          </a>
+        </p>
+      </section>
     </main>
 
     <footer>
@@ -359,7 +420,7 @@
   </div>
 
   <img class="gimmick-beaker" src="https://illustkun.com/wp-content/uploads/illustkun-04102-beaker.png" alt="green flask" id="beaker" />
- <div id="countdown-message" class="countdown-message hidden">柊祭まであと〇日‼️</div>
+  <div id="countdown-message" class="countdown-message hidden">柊祭まであと〇日‼️</div>
   <div id="bubble-container"></div>
 
   <script>
@@ -396,35 +457,37 @@
     const wrapper = document.getElementById("wrapper");
 
     beaker.addEventListener("click", function () {
-  // 泡の画像追加（既存）
-  const bubble = document.createElement('img');
-  bubble.src = '無題63_20250719211249.png';
-  bubble.className = 'bubble';
-  container.appendChild(bubble);
-  setTimeout(() => {
-    bubble.remove();
-  }, 1000);
+      const bubble = document.createElement('img');
+      bubble.src = '無題63_20250719211249.png';
+      bubble.className = 'bubble';
+      container.appendChild(bubble);
+      setTimeout(() => {
+        bubble.remove();
+      }, 1000);
 
-  // 💡カウントダウンの吹き出し表示
-  const msg = document.getElementById("countdown-message");
-  const today = new Date();
-  const target = new Date("2025-09-06");
-  const diff = target - today;
-  const daysLeft = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
-  msg.textContent = `柊祭まであと${daysLeft}日‼️`;
-  msg.classList.remove("hidden");
+      const msg = document.getElementById("countdown-message");
+      const today = new Date();
+      const target = new Date("2025-09-06");
+      const diff = target - today;
+      const daysLeft = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+      msg.textContent = `柊祭まであと${daysLeft}日‼️`;
+      msg.classList.remove("hidden");
 
-  setTimeout(() => {
-    msg.classList.add("hidden");
-  }, 2500);
+      setTimeout(() => {
+        msg.classList.add("hidden");
+      }, 2500);
 
-  // 画面揺れ（既存）
-  wrapper.classList.add('shake');
-  setTimeout(() => {
-    wrapper.classList.remove('shake');
-  }, 800);
-});
+      wrapper.classList.add('shake');
+      setTimeout(() => {
+        wrapper.classList.remove('shake');
+      }, 800);
+    });
+
+    function scrollGallery(direction) {
+      const gallery = document.getElementById("prepGallery");
+      const scrollAmount = 220;
+      gallery.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
   </script>
-
 </body>
 </html>
